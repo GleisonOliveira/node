@@ -1,0 +1,12 @@
+{{>partials/header}}
+    <p>Qual seu ano de nascimento?</p>
+    <form method="POST">
+        <input name="birthdayYear" type="text" />
+        <button>Enviar</button>
+    </form>
+
+    <hr />
+    {{#age}}
+        Sua idade é {{ age }}
+    {{/age}}
+{{>partials/footer}}

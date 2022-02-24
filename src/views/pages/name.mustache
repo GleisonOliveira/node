@@ -1,0 +1,12 @@
+{{>partials/header}}
+    <p>Qual seu nome?</p>
+    <form method="GET">
+        <input name="name" type="text" />
+        <button>Enviar</button>
+    </form>
+
+    <hr />
+    {{#name}}
+        Ola {{ name }}
+    {{/name}}
+{{>partials/footer}}

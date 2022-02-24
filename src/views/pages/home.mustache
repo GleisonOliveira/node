@@ -1,0 +1,22 @@
+{{>partials/header}}
+    {{#user.showWelcome}}
+        Olá tudo bem {{ user.name }}
+    {{/user.showWelcome}}
+    {{^user.showWelcome}}
+        Olá tudo bem visitante
+    {{/user.showWelcome}}
+
+    <ul>
+        {{#products}}
+            {{>partials/productItem}}
+        {{/products}}
+    </ul>
+    <ul>
+        {{#text}}
+            <li>{{ . }}</li>
+        {{/text}}
+        {{^text}}
+            <li>Não há liaragrafos</p>
+        {{/text}}
+    </ul>
+{{>partials/footer}}
