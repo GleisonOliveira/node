@@ -11,6 +11,13 @@
             {{>partials/productItem}}
         {{/products}}
     </ul>
+
+    <ul>
+        {{#expensives}}
+            {{>partials/productItem}}
+        {{/expensives}}
+    </ul>
+
     <ul>
         {{#text}}
             <li>{{ . }}</li>

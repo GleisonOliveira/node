@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { Product } from "../models/Product";
 
 const show = (req: Request, res: Response) => {
   let user = {
@@ -6,18 +7,14 @@ const show = (req: Request, res: Response) => {
     showWelcome: true,
   };
 
-  let products = [
-    { name: "Produto 1", preco: 50 },
-    { name: "Produto 2", preco: 20 },
-    { name: "Produto 3", preco: 30 },
-  ];
-
   let text: Array<string> = ["text1", "text2"];
 
   res.render("pages/home", {
     user,
-    products,
+    products: Product.getAll(),
+    expensives: Product.getByPriceAfter(20),
     text,
+    title: 'Home'
   });
 };
 

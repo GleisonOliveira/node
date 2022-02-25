@@ -3,11 +3,14 @@ import { Request, Response } from "express";
 const showUser = (req: Request, res: Response) => {
   res.render("pages/name", {
     name: req.query.name,
+    title: 'Name'
   });
 };
 
 const showAge = (req: Request, res: Response) => {
-  res.render("pages/age");
+  res.render("pages/age", {
+    title: "Idade",
+  });
 };
 
 const createAge = (req: Request, res: Response) => {
@@ -19,6 +22,7 @@ const createAge = (req: Request, res: Response) => {
   }
   res.render("pages/age", {
     age,
+    title: "Idade",
   });
 };
 
